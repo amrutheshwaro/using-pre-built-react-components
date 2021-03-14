@@ -4,22 +4,22 @@ import Footer from "./Footer";
 import Note from "./Note";
 import CreateArea from "./CreateArea";
 
-function App() {
+const App = function () {
   const [notes, setNotes] = useState([]);
 
-  function addNote(newNote) {
-    setNotes(prevNotes => {
+  const addNote = function (newNote) {
+    setNotes((prevNotes) => {
       return [...prevNotes, newNote];
     });
-  }
+  };
 
-  function deleteNote(id) {
-    setNotes(prevNotes => {
+  const deleteNote = function (id) {
+    setNotes((prevNotes) => {
       return prevNotes.filter((noteItem, index) => {
         return index !== id;
       });
     });
-  }
+  };
 
   return (
     <div>
@@ -39,6 +39,6 @@ function App() {
       <Footer />
     </div>
   );
-}
+};
 
 export default App;
